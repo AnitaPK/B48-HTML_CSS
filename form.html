@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gridContainer{
+            display: grid;
+            background-color: aqua;
+            gap: 5px;
+            grid-template-areas: 'n1 n1 n1'
+                                 'ls s1 s1'
+                                 'ls s2 s3'
+                                 'foo foo foo';
+        }
+.sizeBox{
+    /* width: 100px; */
+    
+    background-color: blue;
+}
+.navbar1{
+    background-color: pink;
+    grid-area: n1;
+    height: 100px;
+}
+.sidebar1{
+    grid-area: ls;
+    background-color: gray;
+
+}
+.section1{
+    grid-area: s1;
+    height: 100px;
+}
+.section2{
+    grid-area: s2;
+    height: 100px;
+}
+.section3{
+    grid-area: s3;
+    height: 100px;
+}
+.footer1{
+    grid-area: foo;
+    background-color: burlywood;
+    height: 100px;
+}
+
+.bgColor{
+    background-color: red;
+    height: 100px;
+    border: 1px solid black;
+}
+.fruitsContainer{
+    display: grid;
+}
+.grapes{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: black;
+}
+.strawberry{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: pink;
+}
+.watermelon{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: rgb(226, 55, 83);
+    height: 200px;
+}
+.orange{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: rgb(226, 55, 83);
+}
+.papaya{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color: rgb(220, 226, 55);
+}
+.pinnapple{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color: rgb(220, 226, 55);
+}
+.OverflowShow{
+    background-color: rgb(248, 221, 170);
+    width: 700px;
+    margin: 10px auto;
+    height: 300px;
+    overflow-Y: scroll;
+}
+/* .OverflowShow:hover{
+    overflow: visible;
+} */
+    </style>
+</head>
+<body>
+
+    <div class="OverflowShow">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto nam architecto ducimus quod quasi iure, veritatis nobis dolorem laboriosam at. Autem reiciendis voluptate vitae, nostrum temporibus animi magnam soluta deserunt unde nobis quos officia ullam praesentium culpa libero dicta beatae dolores illum voluptas expedita aspernatur nisi consequatur facere dolore. Iure minima perspiciatis consectetur soluta deserunt, totam maiores sequi, adipisci sint ab architecto esse enim hic quidem laudantium alias labore, molestiae beatae velit corporis! Ex praesentium explicabo, totam rem modi iure saepe id voluptatibus itaque cumque molestias ea iusto. Error ad at pariatur soluta sapiente facere voluptatibus dignissimos consectetur fugiat laborum cumque vero fugit ducimus nam perferendis, quia recusandae nemo impedit distinctio eius quis, deserunt veritatis. Hic rem nesciunt recusandae fugit. Quam magni accusantium nam dolorum in architecto, mollitia neque quibusdam consequatur id iusto nemo eaque quia? Molestiae, architecto? Facere, perspiciatis deserunt? Numquam laborum nostrum voluptates ad corrupti mollitia eaque cum quae tenetur quas culpa, dignissimos commodi aspernatur nam eius deserunt? Facere eligendi molestiae blanditiis cupiditate quibusdam perferendis. Fugiat neque dicta harum! Porro eveniet architecto adipisci labore velit? Voluptas dicta eligendi sit aliquid sint veritatis, nemo sequi aut, perspiciatis pariatur id neque ipsam voluptates. Cupiditate enim facere sapiente molestiae porro magnam amet autem hic et ea nobis, quos natus dicta doloremque voluptatem eius saepe sunt assumenda consequuntur consequatur. Voluptas perferendis ratione, recusandae cupiditate corrupti nihil impedit, fugit voluptates, similique dolorem reprehenderit rem placeat odit obcaecati magni. Corporis fugit nemo, recusandae minima laboriosam eum dolores odio reprehenderit ab voluptate eaque, rem autem eos a minus! Enim quis perspiciatis porro laudantium maxime, adipisci molestias facere quasi veniam voluptatibus unde explicabo. Sed veniam, quis voluptas porro ipsam expedita eligendi natus minus quasi earum quam, voluptate placeat, eius eveniet similique. Voluptates iure sint nostrum neque repellendus quis labore officiis ipsa ea. Ducimus aperiam laboriosam voluptatibus.
+        </div
+
+    <div class="fruitsContainer">
+        <div class="grapes bgColor"></div>
+        <div class="strawberry bgColor"></div>
+        <div class="watermelon bgColor"></div>
+        <div class="orange bgColor"></div>
+        <div class="papaya bgColor"></div>
+        <div class="pinnapple bgColor"></div>
+    </div>
+    <div class="gridContainer">
+        <div class="navbar1 sizeBox"></div>
+        <div class="sidebar1 sizeBox"></div>
+        <div class="section1 sizeBox"></div>
+        <div class="section2 sizeBox"></div>
+        <div class="section3 sizeBox"></div>
+        <div class="footer1 sizeBox"></div>
+
+    </div>
+    <form onsubmit="" action="" method="">
+        <lable for="fname">First Name</lable>
+        <input type="text" id="fname" value="Shweta" name="fname" disabled/> 
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" required/>
+        <lable>Age </lable>
+        <input type="number" />
+        <lable>Email </lable>
+        <input type="email" />
+        <label>Phone Number</label>
+        <input type="tel" />
+        <label >Gender</label>
+        <input type="radio" value="male" name="gender"/>Male 
+        <input type="radio" value="female" name="gender"/>Female 
+
+        <lable>Subject</lable>
+        <input type="checkbox" value="html" name="sub1"/>HTML
+        <input type="checkbox" value="css" name="sub2"/>CSS
+        <input type="checkbox" value="js" name="sub3"/>Javascript
+
+<select>
+    <option>Bike</option>
+    <option>Car</option>
+    <option>Cycle</option>
+</select>
+<!-- <button onclick="">Submit button</button> -->
+<input type="submit" />
+<input type="reset" />
+    </form>
+    <hr>
+
+
+</body>
+</html>
