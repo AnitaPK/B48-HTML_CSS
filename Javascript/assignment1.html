@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>1. Check Leap Year</h2>
+    <h2>2: Number Checker <br>
+        Write a program that asks the user to input a number.<br>
+        Use a conditional statement to check if the number is positive, negative, or zero.
+        </h2>
+
+<h2>3.Find the Largest of Three Numbers<br>
+Write a program to take three numbers as input.<br>
+Use conditional statements to determine the largest number.
+
+</h2>
+
+    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>
+    <br>    <h3 id="demo1"></h3>
+    <input type="text" id="name1"/>
+    <button onclick="getMeName()">Get Name</button>
+<pre>
+    Datatype   
+    number 
+    string                  bigInt, symbol
+    boolean 
+    undefined 
+    null 
+    object 
+    
+    % 
+</pre>
+
+<p id="result"></p>
+<button onclick="addition()">Add</button>
+<button onclick="subtract()">-</button>
+<button>*</button>
+<button>/</button>
+
+    <script>
+        console.log("Hello from html file");
+        // alert("Hello from alert")
+        document.write("Hello from write")
+        document.getElementById('demo1').innerHTML = "Hello from ID"
+     
+
+function getMeName(){
+    NameOne = document.getElementById("name1").value 
+    console.log(NameOne);
+    console.log(typeof(NameOne))
+}
+
+// let num1 = Number(prompt("Enter first Number"))
+//  console.log(num1)
+//  console.log(typeof(num1))
+//  let num2 = parseInt(prompt("Enter second Number"))
+
+// Number(num1)
+// parseInt(num1)
+// num2 = 4567; arr1=['df','tyu']
+    </script>
+
+    <script>
+        function addition(){
+            document.querySelector('#result').innerHTML =  num1+num2
+        }
+        function subtract(){
+            document.querySelector('#result').innerHTML =  num1-num2
+        }
+        console.log(Math.random())
+    </script>
+</body>
+</html>
