@@ -3,19 +3,30 @@ tasks = [
     {id:2,name1:"Login Module",discription:" vbn tgyhj gbhn !!dfgh rtyu fghj!",status:"complete"}
 ]
 
+function saveToLocalStorage(){
+    localStorage.setItem('tasks111',JSON.stringify(tasks))
+}
+saveToLocalStorage();
 
-fruitslist = ["Banana","Mango","Orange"]
+function getStorageFromLocal(){
+    localTasks = JSON.parse(localStorage.getItem('tasks111'))
+    console.log(localTasks);
+}
+getStorageFromLocal()
+// fruitslist = ["Banana","Mango","Orange"]
 
-fruits = document.getElementById('fruits')
+// fruits = document.getElementById('fruits')
 
-fruits.innerHTML = fruitslist.map((fr)=>`<li class="text-primary">${fr}</li>`)
+// fruits.innerHTML = fruitslist.map((fr)=>`<li class="text-primary">${fr}</li>`)
 
 lists = document.querySelector('#taskList')
 console.log(lists)
 
-function renderList(){
-lists.innerHTML = tasks.map((task)=>`
-                                     <tr>
+getStorageFromLocal();
+
+function renderList(filteredTasks = localTasks){
+lists.innerHTML = filteredTasks.map((task)=>`
+    <tr>
       <th scope="row">${task.id}</th>
       <td>${task.name1}</td>
       <td>${task.discription}</td>
@@ -44,6 +55,8 @@ function addNewTask(){
 
     tasks.push(newTask)
     console.log(tasks);
+    saveToLocalStorage();
+
 renderList();
 }
 
@@ -52,8 +65,31 @@ function deleteTask(ID){
     console.log(ID)
     indexForDelete = tasks.findIndex(t=>ID === t.id)
     console.log(indexForDelete)
+    if(indexForDelete == -1){
+        alert("Task not found")
+    }else{
     tasks.splice(indexForDelete,1)
+    }
     console.log(tasks);
+    saveToLocalStorage();
 renderList();
+
+}
+function clearALLTasks(){
+    lists.innerHTML =   `<tr colspan='5'>
+    <th>No Data</th></tr>`
+}
+function refreshPage(){
+renderList();
+
+}
+
+
+function filterSearch(){
+    keywordSearch = document.getElementById('searchKeyword').value;
+    filteredTasks = localTasks.filter((task)=> task.name1.toLowerCase().includes(keywordSearch))
+
+    console.log(filteredTasks);
+    renderList(filteredTasks)
 
 }
