@@ -10,7 +10,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      
+    <h2 id="today"></h2>
+    <h1>Time: <span id="Hr"></span>:<span id="Min"></span>:<span id="Sec"></span></h1>
+    <script>
+      function getTime(){
+      today = new Date();
+      // document.querySelector('#today').innerHTML = today
+      document.querySelector('#Hr').innerHTML = today.getHours()
+      document.querySelector('#Min').innerHTML = today.getMinutes()
+      document.querySelector('#Sec').innerHTML = today.getSeconds()
+
+
+      }
+      setInterval(getTime,2000)
+      setTimeout(getTime, 2000);
+    </script>  
+
     <h2>Task Management</h2>
 
     <ul id="fruits"></ul>
@@ -26,7 +41,9 @@
             <label class="sr-only" for="inlineFormInputName2">Status</label>
             <input type="text" class="form-control mb-2 mr-sm-2" id="status" placeholder="Status">
           
-            <button onclick="addNewTask()" class="btn btn-primary mb-2">Add New task</button>
+            <!-- <button onclick="addNewTask()" class="btn btn-primary mb-2">Add New task</button> -->
+            <button class="btn btn-primary mb-2" id="addNewTask">Add New task</button>
+          
           <!-- </form> -->
     </div>
     <div><button onclick="clearALLTasks()">Clear All</button></div>

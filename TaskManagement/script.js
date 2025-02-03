@@ -41,6 +41,10 @@ lists.innerHTML = filteredTasks.map((task)=>`
 }
 renderList();
 
+document.querySelector('#addNewTask').addEventListener('click', addNewTask)
+
+
+
 function addNewTask(){
     // e.preventDefault();
     TaskName =  document.getElementById('TaskName').value;

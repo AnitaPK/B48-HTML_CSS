@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    .customCotainer{
+        display: none;
+    }
+</style>  
+</head>
+  <body>
+      
+    <div class="container w-50 shadow mt-5 text-center p-5 rounded otpContainer">
+        <h2>OTP Verification</h2>
+        <button class="btn btn-primary" onclick="getOTP()">Get OTP</button>
+        <p id="getOTP"></p>
+        <h5>Please Enter OTP Which will get by above Get OTP Button</h5>
+        <div class="d-flex justify-content-around w-50 mx-auto">
+        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius: 7px;" id="input1" oninput="goToNext(1)" style="padding-left: 15px;"/>
+        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius: 7px;" id="input2" oninput="goToNext(2)" />
+        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius: 7px;" id="input3" oninput="goToNext(3)" />
+        <input type="text" maxlength="1" minlength="1" size="1" class="" style="border-radius: 7px;" id="input4" oninput="goToNext(4)" />
+    </div>
+    <br><button class="btn btn-primary" onclick="checkOTP()">Submit</button>
+    </div>
+
+    <div class="customCotainer w-75 mx-auto p-5">
+        <div class="container shadow mt-5 text-center p-5">
+            <h2>Welcome to home Page</h2>
+            <p>You have successfully verified your OTP...</p>
+        </div>
+    </div>
+<script>
+    let genOTP 
+    function getOTP(){
+        genOTP = Math.floor(Math.random()* (9999 - 1000 + 1)) + 1000; 
+        document.getElementById('getOTP').innerHTML = genOTP
+    }
+    function goToNext(n1){
+        console.log(n1);
+        for(i=1 ; i<=4; i++){
+        let goToNextInput = document.getElementById(`input${i}`)
+            if(goToNextInput.value.length === 1 && n1 <= 4 ){
+                document.getElementById(`input${i+1}`).focus()
+                console.log(i, document.getElementById(`input${i+1}`))
+        }
+    }
+    }
+    function checkOTP(){
+        let otp = '';
+        for(i=1 ; i<=4; i++){
+            let goToNextInput = document.getElementById(`input${i}`)
+            otp += goToNextInput.value;
+            console.log(otp,"*****")
+        }
+        console.log(otp,otp.length)
+        console.log(genOTP);
+        if(otp.length == 4){
+            if(otp == genOTP){
+                console.log("***")
+                document.querySelector('.customCotainer').style.display = 'block';
+                document.querySelector('.otpContainer').style.display = 'none'
+            }else{
+                alert('Add correct OTP')
+            }
+        }else{
+            alert('Add correct OTP')
+        }
+    }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
