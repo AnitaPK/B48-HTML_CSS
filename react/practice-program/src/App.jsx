@@ -12,6 +12,8 @@ import Navbar from "./components/Navbar";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import ProductsList from "./components/ProductsList";
 import ProductDetail from "./components/ProductDetail";
+import UserDstailsAxios from "./components/UserDstailsAxios";
+import UserDetails from './components/UserDetails'
 
 
 const products = [{id:1, name:'PS-5', discription:"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quia, molestias.",price:2345, stock:5},
@@ -31,6 +33,8 @@ function App() {
           <Route path='greet' element={<Greeting name1={{n1:'AKASH',n2:'Gat'}} />}></Route>
           <Route path='/products' element={<ProductsList products={products}/>} ></Route>
           <Route path='/products/:id' element={<ProductDetail products={products}/>} ></Route>
+          <Route path='/userDetails' element={<UserDetails />}></Route>
+          <Route path='/userDetailsAxios' element={<UserDstailsAxios />}></Route>
         </Routes>
       </Router>
       {/* <CreateProduct />

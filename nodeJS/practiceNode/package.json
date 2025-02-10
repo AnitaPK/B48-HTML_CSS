@@ -1,0 +1,18 @@
+{
+  "name": "practicenode",
+  "version": "1.0.0",
+  "description": "hum padhenge node JS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "run" :"nodemon app.js"
+  },
+  "author": "Anita",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "nodemon": "^3.1.9",
+    "path": "^0.12.7"
+  }
+}
